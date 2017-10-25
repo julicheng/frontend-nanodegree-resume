@@ -114,9 +114,12 @@ for (job in work.jobs) {
 	//work.jobs[job] is an array with objects inside
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[job].datesWorked);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	//concatenating employer and work title
-	var formattedEmployerTitle = formattedEmployer + formattedWorkTitle
+	var formattedWorkEntry = formattedEmployer + formattedWorkTitle + formattedDatesWorked + formattedLocation + formattedDescription;
 	//.work-entry is a class then :last to append the data to the bottom (at the end of last element)
-	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(formattedWorkEntry);
 
 }
