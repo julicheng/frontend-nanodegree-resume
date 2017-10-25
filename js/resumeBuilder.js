@@ -127,3 +127,25 @@ var displayWork = function() {
 };
 
 displayWork();
+
+$(document).click(function(loc) {
+	//loc is location object 
+	//new variable is generated each time user clicks
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+});
+
+$("#main").append(internationalizeButton);
+
+var inName = function(name) {
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+	return name[0] + " " + name[1];
+}
+
+
+$("#mapDiv").append(googleMap);
