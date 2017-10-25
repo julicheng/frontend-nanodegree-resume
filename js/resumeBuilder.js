@@ -21,7 +21,7 @@ var bio = {
 	"skills": ["Drawing", "HTML", "CSS", "JavaScript"],
 	"location": "UK",
 	"bioPic": "images/fry.jpg"
-}
+};
 
 $("#main").append(bio.name);
 $("#main").append(bio.role);
@@ -34,40 +34,37 @@ $("#main").append(bio.bioPic);
 var work = {
 	"jobs": [
 		{
-			"employer" = "Freelance",
-			"title" = "Web Developer",
-			"location" = "Edinburgh",
-			"datesWorked" = "1 year",
-			"description" = "Creating amazing responsive websites"
+			"employer": "Freelance",
+			"title": "Web Developer",
+			"location": "Edinburgh",
+			"datesWorked": "1 year",
+			"description": "Creating amazing responsive websites"
 		},
 		{
-			"employer" = "Freelance",
-			"title" = "Manga Artist",
-			"location" = "Edinburgh",
-			"datesWorked" = "1 year",
-			"description" = "Creating amazing artwork"
+			"employer": "Freelance",
+			"title": "Manga Artist",
+			"location": "Edinburgh",
+			"datesWorked": "1 year",
+			"description": "Creating amazing artwork"
 		}
 	]
 };
-
-
-
 
 
 // projects
 var projects = {
 	"projects": [
 		{
-			"title" = "Weather App",
-			"datesWorked" = "1 week",
-			"description" = "App showing the weather in users location",
-			"images" = []
+			"title": "Weather App",
+			"datesWorked": "1 week",
+			"description": "App showing the weather in users location",
+			"images": []
 		},
 		{
-			"title" = "Tic Tac Toe",
-			"datesWorked" = "1 week",
-			"description" = "Tic Tac Toe game against computer",
-			"images" = []
+			"title": "Tic Tac Toe",
+			"datesWorked": "1 week",
+			"description": "Tic Tac Toe game against computer",
+			"images": []
 		}
 	]
 };
@@ -83,7 +80,7 @@ var education = {
 			"url": "http://example.com",
 			"majors": ["CS"]
 		}
-	];
+	],
 	"onlineCourses": [
 		{
 			"title": "Intro to JS",
@@ -91,22 +88,22 @@ var education = {
 			"datesAttended": "1 month",
 			"url": "http://example.com"
 		}
-	];
+	]
 };
 
 if (bio.skills.length > 0) {
 	//add heading title on page if > 0
 	$("#header").append(HTMLskillsStart);
 	//create formatted variable so its easier to print on screen
-	var formattedSkill = HTMLskills.replace("%data", bio.skills[0]);
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
 	//print on screen the skill
 	$("#skills").append(formattedSkill);
 	//assign next skill to the formattedSkill
-	formattedSkill = HTMLskills.replace("%data", bio.skills[1]);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
 	//print 2nd skill on screen
 	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data", bio.skills[2]);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data", bio.skills[3]);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
-}
+};
