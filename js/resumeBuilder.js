@@ -74,7 +74,7 @@ var projects = {
 var education = {
 	"schools": [
 		{
-			"name": "Awesome University"
+			"name": "Awesome University",
 			"location": "UK",
 			"degreeDates": "3 years",
 			"url": "http://example.com",
