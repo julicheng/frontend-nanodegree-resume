@@ -91,35 +91,39 @@ var education = {
 	]
 };
 
-if (bio.skills.length > 0) {
-	//add heading title on page if > 0
-	$("#header").append(HTMLskillsStart);
-	//create formatted variable so its easier to print on screen
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	//print on screen the skill
-	$("#skills").append(formattedSkill);
-	//assign next skill to the formattedSkill
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	//print 2nd skill on screen
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
+var displayWork = function() {
+	if (bio.skills.length > 0) {
+		//add heading title on page if > 0
+		$("#header").append(HTMLskillsStart);
+		//create formatted variable so its easier to print on screen
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+		//print on screen the skill
+		$("#skills").append(formattedSkill);
+		//assign next skill to the formattedSkill
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+		//print 2nd skill on screen
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+		$("#skills").append(formattedSkill);
+		formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+		$("#skills").append(formattedSkill);
+	};
+
+	for (job in work.jobs) {
+		//add heading
+		$("#workExperience").append(HTMLworkStart);
+		//work.jobs[job] is an array with objects inside
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[job].datesWorked);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		//concatenating employer and work title
+		var formattedWorkEntry = formattedEmployer + formattedWorkTitle + formattedLocation + formattedDatesWorked  + formattedDescription;
+		//.work-entry is a class then :last to append the data to the bottom (at the end of last element)
+		$(".work-entry:last").append(formattedWorkEntry);
+
+	}
 };
 
-for (job in work.jobs) {
-	//add heading
-	$("#workExperience").append(HTMLworkStart);
-	//work.jobs[job] is an array with objects inside
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-	var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[job].datesWorked);
-	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-	//concatenating employer and work title
-	var formattedWorkEntry = formattedEmployer + formattedWorkTitle + formattedDatesWorked + formattedLocation + formattedDescription;
-	//.work-entry is a class then :last to append the data to the bottom (at the end of last element)
-	$(".work-entry:last").append(formattedWorkEntry);
-
-}
+displayWork();
