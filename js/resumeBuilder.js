@@ -107,3 +107,16 @@ if (bio.skills.length > 0) {
 	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
 };
+
+for (job in work.jobs) {
+	//add heading
+	$("#workExperience").append(HTMLworkStart);
+	//work.jobs[job] is an array with objects inside
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	//concatenating employer and work title
+	var formattedEmployerTitle = formattedEmployer + formattedWorkTitle
+	//.work-entry is a class then :last to append the data to the bottom (at the end of last element)
+	$(".work-entry:last").append(formattedEmployerTitle);
+
+}
