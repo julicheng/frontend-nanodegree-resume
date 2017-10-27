@@ -83,7 +83,7 @@ var education = {
 			"degreeDates": "3 years",
 			"url": "http://example.com",
 			"majors": ["CS"]
-		}
+		},
 	],
 	"onlineCourses": [
 		{
